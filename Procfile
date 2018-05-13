@@ -1,2 +1,1 @@
-web: yarn start
-backend: node app.js
+web: yarn start && node app.js
