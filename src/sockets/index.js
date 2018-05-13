@@ -2,7 +2,7 @@ import * as types from '../constants/ActionTypes'
 import { addUser, messageReceived, populateUsersList } from '../actions'
 
 const setupSocket = (dispatch, username) => {
-  var HOST = location.origin.replace(/^http/, 'ws')
+  var HOST = window.location.origin.replace(/^http/, 'ws')
   const socket = new WebSocket(HOST)
 
   socket.onopen = () => {

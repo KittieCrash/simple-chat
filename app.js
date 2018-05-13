@@ -1,6 +1,10 @@
-const WebSocket = require('ws')
+const WebSocket = require('ws');
+const express = require('express');
 
-const wss = new WebSocket.Server({ port: process.env.PORT || 8989 })
+const server = express().use((req, res) => res.sendfile("./public/index.html"))
+.listen(process.env.PORT || 8989, () => console.log(`Listening on ${process.env.PORT}`));
+
+const wss = new WebSocket.Server({server});
 
 const users = []
 
