@@ -1,1 +1,2 @@
-web: yarn start && node app.js --PORT 7777
+web: yarn start
+backend: node app.js
