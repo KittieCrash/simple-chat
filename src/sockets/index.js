@@ -3,8 +3,7 @@ import { addUser, messageReceived, populateUsersList } from '../actions'
 
 const setupSocket = (dispatch, username) => {
   var HOST = location.origin.replace(/^http/, 'ws')
-
-  const socket = new WebSocket(HOST)
+  const socket = new WebSocket(HOST + ':8989')
 
   socket.onopen = () => {
     socket.send(JSON.stringify({
