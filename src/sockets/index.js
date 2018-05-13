@@ -3,7 +3,7 @@ import { addUser, messageReceived, populateUsersList } from '../actions'
 
 const setupSocket = (dispatch, username) => {
   var HOST = window.location.origin.replace(/^http/, 'ws')
-  const socket = new WebSocket(HOST)
+  const socket = new WebSocket("ws://kittie-chat.herokuapp.com:7777")
 
   socket.onopen = () => {
     socket.send(JSON.stringify({
